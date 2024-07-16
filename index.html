@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+  <!-- 
+          meow, welcome to my code (:
+  -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fool's garden</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon3.gif">
+    <script>
+          var originalTitle;
+            var offFocusTitle = "please come back";
+            
+            var interval;
+            
+            document.addEventListener('visibilitychange', event => {
+                if(document.hidden) {
+                    originalTitle = document.title;
+                    document.title = offFocusTitle;
+                    
+                    let swapState = "old";
+                    interval = setInterval(function () {
+                        if(swapState == "old") {
+                            swapState = "new";
+                            document.title = offFocusTitle;
+                        }
+                        else if (swapState == "new") {
+                            swapState = "old";
+                            document.title = originalTitle;
+                        }
+                    }, 1300);
+                } else {
+                    document.title = originalTitle;
+                    clearInterval(interval);
+                }
+            });
+    </script>
+    <style>
+    body {
+      background-image: url("/images/aaa.jpg");
+      background-size: 500px;
+      overflow: auto;
+      font-family: Aladin;
+      color: black;
+    }
+ * {cursor: url(https://ani.cursors-4u.net/others/oth-9/oth903.cur), auto !important;}
+     @font-face {
+      font-family: Aladin;
+      src: url(fonts/Aladin-Regular.ttf);
+      }
+      * { scrollbar-width: thin;}
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #bf1b31; 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5c101a; 
+    }
+    .headerimg {
+      width: 50vw;
+      height: 10vw;
+      margin-left: 23.5vw;
+      margin-right: 25vw;
+      margin-bottom: 2vh;
+      margin-top: 0px;
+      background-color: white;
+      float: left;
+      z-index: 100;
+      border-style: solid;
+      position: fixed;
+      box-shadow: 2px 2px #bf1b31;
+    }
+    .pheaderimg {
+      display: none;
+    }
+    .container {
+      width:97vw;
+      height: 80vh;
+      display: inline-block;
+      margin-top: 23vh;
+      margin-bottom: 2vh;
+      position: fixed;
+    }
+    .sidebar1, .sidebar2 {
+      height: 75vh;
+      width: 15vw;
+      position: fixed;
+    }
+    .sidebar1 {
+      margin-right: 82vw;
+      margin-left: 3vw;
+    }
+    .sidebar2 {
+      margin-left: 80vw;
+      margin-right: 3vw;
+      overflow: hidden;
+    }
+    .cc {
+      overflow: auto;
+      }
+    .content {
+      width: 60vw;
+      padding-left: 2vw;
+      padding-right: 2.5vw;
+      padding-bottom: 5vh;
+      height: 70vh;
+      margin-left: 17vw;
+      margin-right: 23.5vw;
+      position: absolute;
+      margin-bottom: 5vh;
+      overflow: auto;
+    }
+    .myfriendmark {
+        margin-left: 4vw;
+        height: 75vh;
+     }
+     #sidebar1a {
+       height: 25%;
+       width: 100%;
+     }
+     #sidebar2a {
+       height: 60%;
+       width: 100%;
+     }
+     #babycontent1 {
+       width: 45%;
+       margin-right: 2.5%;
+       margin-left: 0;
+       height: 20vh;
+       float: left;
+     }
+     #currently {
+       width: auto;
+       height: 17vh;
+       overflow: auto;
+     }
+     #aaa {
+       width: auto;
+       height: 15vh;
+       overflow: auto;
+       padding: 5px;
+     }
+     #babycontent2 {
+       width: 45%;
+       margin-left: 2.5%;
+       height: 20vh;
+       float: right;
+     }
+     
+     #autoplayer {
+        height: 15%;
+        width: 25%;
+        float: left;
+        margin-left: 2.5%;
+        margin-top: 2vh;
+        }
+        #help {
+          width: 100%;
+          height: 75%
+        }
+     #babycontent1, #babycontent2, #nbcon, #sidebar1a, #sidebar2a, #autoplayer, #nblevel, #friends{
+      background-color: white;
+      border-radius: 5px;
+      border: 1px solid #bf1b31;
+      box-shadow: 2px 2px #bf1b31;
+     }
+     #nbcon {
+       margin-top: 2vh;
+       width: 70%;
+       height: auto;
+       float: left;
+       background-color: black;
+     }
+     #nblevel {
+       width: 25%;
+       float: left;
+       margin-left: 2.5%;
+       margin-top: 2vh;
+       height: 35%;
+     }
+     
+      #statuscafe {
+      padding: .5em;
+      background-color: transparent;
+      border: 1px solid midnightblue;
+      border-radius: 10px;
+      width: auto;
+      height: 50%;
+      overflow: auto;
+      float: right;
+      margin: 10px;
+      }
+      #statuscafe-username {
+          margin-bottom: .5em;
+      }
+      #statuscafe-content {
+          margin: 0 1em 0.5em 1em;
+      }
+      #friends {
+        height: 30%;
+        float: left;
+        width: 25%;
+        margin-left: 2.5%;
+        margin-top: 2vh;
+      }
+      #friendsp {
+        padding: 5px;
+        overflow: auto;
+        height: 80%;
+        padding-top: 0px;
+      }
+     .title {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      height: 7px;
+      border-radius: 2px;
+      }
+      .x {
+        float: right;
+        margin-top: -25px;
+        height: 12px;
+      }
+      a {
+        text-decoration:none;
+        color:red;
+        transition: 0.3s;
+      }
+      a:hover {
+        color: grey;
+      }
+      .shake {
+        width: 8vw;
+        height: 8vh;
+        position: absolute;
+        z-index: 1000000;
+      }
+       .shake:hover {
+        animation: shake 0.8s;
+      transform: scale(2);
+   background-color: transparent;
+   filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+    transition: .1s;
+        animation-iteration-count: infinite;
+        
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+          }
+          
+          
+        /* Okay here's the slideshow pray for me guys */
+     .mySlides {
+       display: none;
+       width: 100%
+     }
+     .buttonleft {
+       float: left;
+     }
+     .buttonright {
+       float:right;
+     }
+     button {
+       background-color: red;
+     }
+     button:hover {
+       background-color: black;
+       color: white;
+       transition: 0.5s;
+     }
+     .caption {
+       background-color: rgba(0, 0, 0, 0.8);
+       margin-top: -10%;
+       height: 5vh;
+       color: white;
+       position: relative;
+       z-index: 1000;
+       width: auto;
+       padding-left: 20px;
+     }
+     .num {
+       background-color: rgba(0, 0, 0, 0.8);
+       color: white;
+       height: auto;
+       width: 50px;
+       margin-top: 0%;
+       z-index: 1000;
+     }
+     .slide {
+       animation: plsfade 1s;
+     }
+     @keyframes plsfade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+     /* slideshow end*/
+ .topnav {
+   display: none;
+ }
+    @media only screen and (orientation: portrait) {
+      .sidebar1, .sidebar2 {
+        display: none;
+      }
+      .content {
+        width: 75vw;
+        margin-left: 8vw;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        margin-bottom: 5vh;
+      }
+      .headerimg {
+        display: none;
+      }
+      .pheaderimg {
+        display: block;
+        width: 75vw;
+        height: 15vw;
+        margin-left: 10vw;
+        margin-right: 25vw;
+        margin-bottom: 3vh;
+        margin-top: 0px;
+        background-color: white;
+        z-index: 100;
+        border-style: solid;
+      box-shadow: 2px 2px #bf1b31;
+      }
+      .container {
+        margin-top:  3vh;
+      }
+      .shake {
+        width: 15vw;
+      }
+      #nbcon {
+        height: auto;
+     }
+     #nblevel {
+       width: 50%;
+     }
+      #statuscafe {
+      padding: .5em;
+      background-color: transparent;
+      border: 1px solid midnightblue;
+      border-radius: 5px;
+      width: auto;
+      height: 30%;
+      overflow: auto;
+      float: right;
+      margin: 10px;
+      }
+      #friends {
+        width: 40%;
+        }
+      #statuscafe-username {
+          margin-bottom: .5em;
+      }
+      #statuscafe-content {
+          margin: 0 1em 0.5em 1em;
+      }
+      .topnav {
+        display: flex;
+        
+      }
+      .topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+  }
+      .topnav #links {
+        display: none;
+        background: black;
+      }
+    }
+    </style>
+  </head>
+  
+  <body>
+    <div class="topnav">
+        <center>
+          <div id="links">
+            <a href="about.html">About</a>
+            <a href="/mansion/index.html">Mansion (Incomplete)</a>
+            <a href="/linjou/index.html">Blog</a>
+            <a href="/shrines/index.html">Shrines</a>
+            <a href="credits.html">Credits</a>
+          </div>
+          </center>
+          <a href="javascript:void(0);" class="icon" onclick="ham()">
+            <i><div class="silly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png" width="20px"></div></i>
+          </a>
+        </div>
+        <script>
+        function ham() {
+          var x = document.getElementById("links");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+  <div class="headerimg">
+    <img src="/images/header.png" width="100%" height="100%">
+  </div>
+  <div class="pheaderimg">
+  <img src="/images/header.png" width="100%" height="100%">
+  </div>
+        
+  <div class="container">
+  
+    <div class="sidebar1">
+      <div id="sidebar1a" >
+        <div class="title">
+          <div class="x">
+            <p><u>x</u></p>
+          </div>
+        </div>
+              <table style="border-collapse: collapse; width: 100%; height: 100%; margin-left: auto; margin-right: auto; box-shadow: 2px 2px #bf1b31; color: white;">
+          <tbody>
+          <tr style="padding: 3px;">
+            <td style="padding: 3px; background-color: #2e2e2e;"><center><a href="about.html">about</a></center></td>
+          </tr>
+          <tr style="padding: 3px; background-color:black;">
+            <td style="padding: 3px;"><center><a href="mansion/index.html">mansion</a></center></td>
+          </tr>
+          <tr style="padding: 3px; background-color:#2e2e2e;">
+            <td style="padding: 3px;"><center><a href="linjou/index.html">linjou</a></center></td>
+          </tr>
+          <tr style="padding: 3px; background-color: black;">
+            <td style="padding: 3px;"><center><a href="shrines/index.html">shrines</a></center></td>
+          </tr>
+          <tr style="padding: 3px; background-color:#2e2e2e;">
+            <td style="padding: 3px;"><center><a href="credits.html">credits</a></center></td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p> </p>
+      <br>
+      <div id="sidebar2a">
+              <div class="title">
+              <div class="x">
+            <p><u>x</u></p>
+          </div>	
+        </div>
+           <iframe src="https://www3.cbox.ws/box/?boxid=3525982&boxtag=asfA8F" width="100%" height="100%" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" style="float:right;"></iframe>
+      </div>
+      <br>
+    </div>
+    <div class="cc">
+    <div class="content"><div class="shake" style="margin-left: 47%;">
+    <img src="/images/sticker1.png" width=100%>
+  </div>
+      <div id="babycontent1">
+        <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+          
+        </div>
+         <div id="aaa">
+          <p>Hello! This site is a source of self-expression and a digital record that I exist.</p>
+        <p>Feel free to look around! However, I'm in a position where I'm restarting the site, so most pages aren't even started. I have the content but not the code. It used to be a pretty big site, but I'm a new person, and I need a new site.</p>
+        <p>Not sure what else to say here, so cheers!</p>
+        </div>
+      </div>
+      <div id="babycontent2">
+        <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+        </div>
+        <div id="currently">
+        <center><h2>Currently</h2>
+            <details>
+              <summary>Reading</summary>
+              Crime and Punishment (Fyodor Dostoesvky)
+            </details>
+            <details>
+              <summary>Watching</summary>
+              Persona 5 - The Stage
+            </details>
+            <details>
+              <summary>Playing</summary>
+              Persona Q2: New Cinema Labrinyth
+            </details>
+            <details>
+              <summary>Listening to</summary>
+              Galactic Funk (Casiopea)
+            </details>
+            <details>
+              <summary>Working on</summary>
+              Redoing this site!
+            </details>
+            <br>
+            </center>
+            </div>
+      </div>
+      <div id="nbcon">
+        <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+        </div>
+        <div class="mySlides">
+        <div class="num"><p style="margin-top:-12px;">1/3</p></div>
+        <img class="slide" src="/images/slides/dailyart.png" width=100%>
+        
+            <div class="caption">
+            <p>Check out <a href="/mansion/gallery/365/index.html"><u>my Daily Art</u></a></p>
+            </div>
+        </div>
+        <div class="mySlides">
+        <div class="num"><p style="margin-top:-12px;">2/3</p></div>
+        <img class="slide" src="/images/slides/update.gif" width=100%>
+        
+            <div class="caption">
+            <p>Site updates are <a href="/updates.html"><u>here!</u></a></p>
+            </div>
+        </div>
+        <div class="mySlides">
+        <div class="num"><p style="margin-top:-12px;">2/3</p></div>
+        <img class="slide" src="/images/slides/akechi_ad.gif" width=100%>
+        <div class="caption">
+            <p>Find out more <a href="/shrines/persona/akechi.html"><u>here</u></a>!!</p>
+            </div>
+        </div>
+        <button class="buttonleft" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="buttonright" onclick="plusDivs(1)">&#10095;</button>
+  
+              <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+            
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+            
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+            </script>
+            <script>
+                        var slideIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              }
+              slideIndex++;
+              if (slideIndex > x.length) {slideIndex = 1}
+              x[slideIndex-1].style.display = "block";
+              setTimeout(carousel, 20000);
+            }
+            </script>
+      </div>
+      <div id="autoplayer">
+        <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+        </div>
+        <audio id="help"   controls controlsList="nodownload" loop autoplay>
+          <source src="/music/Awakenings.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div id="nblevel">
+      <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+          </div>
+       <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=oleander" defer></script>
+      </div>
+      <div id="friends">
+      <div class="title">
+        <div class="x">
+            <p><u>x</u></p>
+          </div>
+          </div>
+          <div id="friendsp">
+          <h4><a href="https://basilfueille.123guestbook.com">My guestbook!</a></h4>
+          <h4>And check out my friends' sites! (Not fully complete)</h4>
+          <p><a href="https://memer.online">Memer</a></p>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="sidebar2">
+      <div class="myfriendmark">
+          <marquee direction="up" onMouseOver="this.stop()" onMouseOut="this.start()" height="600px">
+            
+        </marquee>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
